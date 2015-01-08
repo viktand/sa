@@ -1,0 +1,11 @@
+ship
+stn
+stn2
+stn3
+stn4
+stn5
+dot1
+boll
+rock1
+dot1boom
+bonusmiss

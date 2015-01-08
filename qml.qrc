@@ -1,0 +1,55 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Mbutton.qml</file>
+        <file>MoveImages.qml</file>
+        <file>Bolls.qml</file>
+        <file>SelectLivel.qml</file>
+        <file>Ship.qml</file>
+        <file>Missile.qml</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="fon">fon.jpg</file>
+        <file alias="ship">ship.png</file>
+        <file alias="stn">stn.png</file>
+        <file alias="stn2">stn2.png</file>
+        <file alias="stn3">stn3.png</file>
+        <file alias="stars">stars.png</file>
+        <file alias="stn4">stn4.png</file>
+        <file alias="boom">boom.png</file>
+        <file alias="stn5">stn5.png</file>
+        <file alias="miss">miss.png</file>
+        <file alias="miss2">miss2.png</file>
+        <file alias="boom2">boom2.png</file>
+        <file alias="title">title.png</file>
+        <file alias="n1">n1.png</file>
+        <file alias="planet">planet.png</file>
+        <file alias="dot1">dot1.png</file>
+        <file alias="n2">n2.png</file>
+        <file alias="boll">boll.png</file>
+        <file alias="selectLabel">selectLabel.png</file>
+        <file alias="rock1">rock1.png</file>
+        <file alias="dot1boom">dot1boom.png</file>
+        <file alias="bonusmiss">bonusmiss.png</file>
+    </qresource>
+    <qresource prefix="/poligons">
+        <file alias="pstn4">stn4</file>
+        <file alias="pstn3">stn3</file>
+        <file alias="pstn2">stn2</file>
+        <file alias="pstn">stn</file>
+        <file alias="pship">ship</file>
+        <file alias="plgs">poligons.txt</file>
+        <file alias="pstn5">stn5</file>
+        <file alias="pdot1">dot1</file>
+        <file alias="pboll">boll</file>
+        <file alias="prock1">rock1</file>
+        <file alias="pdot1boom">dot1boom</file>
+        <file alias="pbonusmiss">bonusmiss</file>
+    </qresource>
+    <qresource prefix="/music">
+        <file>chip.wav</file>
+    </qresource>
+    <qresource prefix="/maps">
+        <file>livel2map</file>
+    </qresource>
+</RCC>
