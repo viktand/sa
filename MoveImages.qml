@@ -1,15 +1,10 @@
 import QtQuick 2.0
-import screenSize 1.0
 
 // Катринка на со ссылкой на полигон и функциями обработки движения и столкновения
 
 
 Image {
     id: stone
-
-    ScreenFunctions{
-        id: cFun
-    }
 
     property int poligon: 2                                      // номер полигона
     property double kf: cFun.getPoligonWidth(poligon)/width      // масштаб к полигону
@@ -28,6 +23,7 @@ Image {
     property int num: -1                                         // номер объекта, который он :)
     property bool life: true                                     // объект "жив"
     property bool planet: false                                  // объект неподвижен на планете (скала)
+    property bool fromMap: false                                 // подгружать новый х из карты
     width: fonWidth/screenWidth
     height: fonWidth/screenHeight
     x: 0
@@ -37,18 +33,33 @@ Image {
     visible: false
     fillMode: Image.Stretch
 
+//    Text{
+//        id: label
+//        x:stone.width/2
+//        y:stone.height/2
+//        width: stone.width
+//        height: stone.height/2
+//        text: ""
+//        color: "#00FF00"
+//    }
+
     function move(){ // смещение влево
-        if(x>(-1*width) && visible){
+        if(x>(-1*width)){
             if(go){
                 x-=fonWidth/speed
             }
         }
         else {
-            if(stone.inUse){
-            x=xPos+fonWidth*getPlace(xPos,width)
-            if(rndPos)y=cFun.getRND(fonHeight-height)
-            if(poligon1==poligon2)poligon1=poligon
-            life=true
+            if(inUse){
+                visible=true
+                if(fromMap){
+                   // label.text=cFun.getIndex()+1
+                    //x=fonWidth+fonWidth*cFun.getPoint()
+                }
+                else x=xPos
+                if(rndPos)y=cFun.getRND(fonHeight-height)
+                if(poligon1==poligon2)poligon1=poligon
+                life=true
             }
         }
     }

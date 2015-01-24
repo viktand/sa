@@ -1,0 +1,13 @@
+x=0.1
+y=0.953
+speedx=1
+speedy=0
+power=90
+angle=45
+plg1=11
+plg2=9
+shootx=1.02
+shooty=1
+acttime=1,5
+planet=false
+sheep=1

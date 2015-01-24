@@ -9,3 +9,9 @@ boll
 rock1
 dot1boom
 bonusmiss
+dot2
+rock2
+rock3
+planet
+balck1
+ferm1

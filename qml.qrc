@@ -7,6 +7,9 @@
         <file>SelectLivel.qml</file>
         <file>Ship.qml</file>
         <file>Missile.qml</file>
+        <file>MissliePocket.qml</file>
+        <file>Sprites2.qml</file>
+        <file>SingleSprite.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="fon">fon.jpg</file>
@@ -31,6 +34,14 @@
         <file alias="rock1">rock1.png</file>
         <file alias="dot1boom">dot1boom.png</file>
         <file alias="bonusmiss">bonusmiss.png</file>
+        <file alias="dot2">dot2.png</file>
+        <file alias="rock2">rock2.png</file>
+        <file alias="rock3">rock3.png</file>
+        <file alias="up">up.png</file>
+        <file alias="down">down.png</file>
+        <file alias="miss3">miss3.png</file>
+        <file alias="balck1">balck1.png</file>
+        <file alias="ferm1">ferm1.png</file>
     </qresource>
     <qresource prefix="/poligons">
         <file alias="pstn4">stn4</file>
@@ -45,11 +56,36 @@
         <file alias="prock1">rock1</file>
         <file alias="pdot1boom">dot1boom</file>
         <file alias="pbonusmiss">bonusmiss</file>
+        <file alias="pdot2">dot2</file>
+        <file alias="prock2">rock2</file>
+        <file alias="prock3">rock3</file>
+        <file alias="pplanet">planet</file>
+        <file alias="pbalck1">balck1</file>
+        <file alias="pferm1">ferm1</file>
     </qresource>
     <qresource prefix="/music">
         <file>chip.wav</file>
     </qresource>
     <qresource prefix="/maps">
-        <file>livel2map</file>
+        <file>liv2</file>
+        <file>liv1</file>
+    </qresource>
+    <qresource prefix="/obj">
+        <file>template</file>
+        <file>obj_dot1</file>
+        <file>objs</file>
+        <file>obj_dot2</file>
+        <file>obj_rock</file>
+        <file>obj_rock2</file>
+        <file>obj_rock3</file>
+        <file>obj_stn1</file>
+        <file>obj_stn2</file>
+        <file>obj_stn3</file>
+        <file>obj_stn4</file>
+        <file>obj_stn5</file>
+        <file>obj_planet</file>
+        <file>obj_missileBonus</file>
+        <file>obj_ferm1</file>
+        <file>obj_balck1</file>
     </qresource>
 </RCC>

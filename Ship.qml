@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import screenSize 1.0
 
 // корабль и элементы управления к нему
 
@@ -17,10 +16,8 @@ Item {
     property bool direct: false
     property double kf: 128/shWidth
     property int poligon: 0
-
-    ScreenFunctions{
-        id: cFun
-    }
+    property double setDirect: 0.5
+    property double setShut: 0.5
 
     Image{                      // корабль
         id: ship
@@ -36,29 +33,53 @@ Item {
 
     MouseArea{
         id: shut
-        width: parent.width/3
-        height: parent.height
         x: parent.width-width
-        y: 0
+        y: shipBig.height-shipBig.height*setShut
+        width: parent.width/3
+        height: parent.height*setShut
         enabled: direct
         onClicked: {
-            if(missSh.missVisible==false && missShutCount>0){
+            if(missSh.missVisible==false && misPoc.count>0){
                missSh.start()
             }
+        }
+        Image {
+            id: shutPic
+            x: shut.width-width
+            y: 0
+            width: height
+            height: shut.height
+            source: "qrc:/images/miss3"
+            smooth: true
+            fillMode: Image.Stretch
+            opacity: 0.09
+            visible: gameOn
         }
     }
 
     MouseArea{
         id: up
         x: 0
-        y: 0
-        width: parent.width/3
-        height: parent.height/2
+        y: shipBig.height-shipBig.height*setDirect
+        width: shipBig.width/3
+        height: (shipBig.height*setDirect)/2
         enabled: direct
         onPressed: timerUp.start()
         onClicked: timerUp.stop()
         onExited: timerUp.stop()
         onEntered: timerUp.start()
+        Image {
+            id: upPic
+            x: 0
+            y: 0
+            width: up.height
+            height: width
+            source: "qrc:/images/up"
+            smooth: true
+            fillMode: Image.Stretch
+            opacity: 0.09
+            visible: gameOn
+        }
     }
 
     Timer{  // таймер смещения корабля вверх, при удержании "кнопки"
@@ -72,14 +93,26 @@ Item {
     MouseArea{
         id: dn
         x: 0
-        y: parent.height/2
+        y: shipBig.height-(shipBig.height/2)*setDirect
         width: parent.width/3
-        height: parent.height/2
+        height: (shipBig.height*setDirect)/2
         enabled: direct
         onPressed: timerDn.start()
         onClicked: timerDn.stop()
         onExited: timerDn.stop()
         onEntered: timerDn.start()
+        Image {
+            id: downPic
+            x: 0
+            y: dn.height-height
+            width: dn.height
+            height: width
+            source: "qrc:/images/down"
+            smooth: true
+            fillMode: Image.Stretch
+            opacity: 0.09
+            visible: gameOn
+        }
     }
 
     Timer{

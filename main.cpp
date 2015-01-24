@@ -2,6 +2,7 @@
 #include <QQmlComponent>
 #include <QQmlApplicationEngine>
 
+
 #include "screensize.h"
 
 int main(int argc, char *argv[])

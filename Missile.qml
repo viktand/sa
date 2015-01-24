@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import screenSize 1.0
 
 // ракета
 
@@ -13,10 +12,8 @@ Item{
     property int missX: 0
     property int missY: 0
     property int missWidth: width/64
+    property int sprite: 0   // куда попало
 
-    ScreenFunctions{
-        id: cFun
-    }
 
     Image { // ракета - выстрел (которая типа летит)
         id: missShut
@@ -49,9 +46,9 @@ Item{
         onTriggered: showBoomShow()
     }
 
-    function setBoom2(){ // задать точку взрыва камня
+    function setBoom2(xBoom){ // задать точку взрыва камня
         missileBoom.width=1
-        missileBoom.x=missShut.x+missShut.width
+        missileBoom.x=xBoom  // missShut.x+missShut.width
         missileBoom.y=missShut.y+missShut.height/2
         showBoom2.start()
         missileBoom.visible=true
@@ -67,17 +64,16 @@ Item{
         else {
             missileBoom.visible=false
             showBoom2.stop()
-            endBoom()
         }
     }
 
     function start(){    // выстрел
-        missShutCount--        // уменьшить количество ракет в запасе
+        misPoc.count--        // уменьшить количество ракет в запасе
         missVisible=true   // показать ракету ракету
         missY=shipp.shY       // установить ракету
         missX=shipp.shX+shipp.shWidth*0.7
         shutTimer.start()       // включить таймер анимации ракеты
-        missNo()                // отобразить остаток ракет
+        misPoc.missNo()                // отобразить остаток ракет
     }
 
     function shutTm(b){
@@ -93,10 +89,9 @@ Item{
         onTriggered: shutDo()
     }
 
-    function shutDo(){          // Выстрел
+    function shutDo(){          // Выстрел (движение ракеты)
         if(missX<width){
             missX+=width/100
-            missBoom()          // проверка на попадание куда-нибудь (in main.qml)
         }
         else{
             shutTimer.stop()

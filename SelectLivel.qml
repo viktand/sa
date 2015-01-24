@@ -26,5 +26,19 @@ Image {
         height: y*2
         onClicked: startLiv(2)
     }
+
+    MouseArea{
+        id: sLiv
+        x: 0
+        y: 0
+        width: title.width/3
+        height: width/5
+        onClicked: {
+            bls.superLife=true
+            info.text="super life mode"
+        }
+    }
+
+
 }
 
